@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <title>scroll test</title>
+    <script type="text/javascript" src="skrollr.js"></script>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <style>
+      body{
+        margin:0;
+        padding:0;
+        background-color: #white;
+        padding: 0;
+        margin: 0;
+        font-family: 'Playfair Display', serif;
+      }
+      .cl{
+        cursor:pointer;
+      }
+      .cl:hover{
+        opacity:1!important;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="rbge" src="mainanimate/rightbgextend.svg" style="margin-top:0;margin-left:53.457vw;width:76.692vw;position:fixed;" data-0="margin-left:53.457vw;" data-300="margin-left:-22.357vw;"></img>
+    <img id="rbg" src="mainanimate/rightbg.svg" style="margin-top:0;margin-left:31.102vw;;width:68.898vw;position:fixed;" ></img>
+    <img id="bg" src="mainanimate/main.svg" style="margin-top:0;margin-left:0vw;width:100vw;position:fixed;z-index:-1;" ></img>
+    <div id="fontmask" style="width:100vw;height:47.091vw;position:fixed;margin:0;overflow:hidden;">
+      <img id="han1" src="mainanimate/han-1.svg" style="margin-top:6.146vw;margin-left:10.239vw;width:11.306vw;position:absolute;" data-0="opacity:1;" data-300="opacity:0;"></img>
+      <img id="han2" src="mainanimate/han-2.svg" style="margin-top:30.803vw;margin-left:3.057vw;width:6.637vw;position:absolute;" data-0="opacity:1;" data-300="opacity:0;"></img>
+      <img id="han3" src="mainanimate/han-3.svg" style="margin-top:11.247vw;margin-left:36.656vw;width:16.733vw;position:absolute;" data-0="opacity:1;" data-300="opacity:0;"></img>
+      <img id="han4" src="mainanimate/han-4.svg" style="margin-top:-3.434vw;margin-left:68.705vw;width:19.437vw;position:absolute;" data-0="opacity:1;" data-300="opacity:0;"></img>
+      <img id="han5" src="mainanimate/han-5.svg" style="margin-top:26.203vw;margin-left:71.901vw;width:21.567vw;position:absolute;" data-0="opacity:1;" data-300="opacity:0;"></img>
+    </div>
+    <h1 style="font-size:2vw;letter-spacing:1.8vw;color:#494949;margin-top:36vw;margin-left:70vw;z-index:2;position:fixed;" data-0="margin-left:70vw;" data-300="margin-left:100vw;">Portfolio</h1>
+    <div id="designmask" style="width:100vw;height:47.091vw;position:fixed;margin:0;overflow:hidden;">
+      <div style="width:100vw;text-align:center;opacity:0;margin-top:-3vw;height:1.5vw;position:fixed;" data-300="margin-top:-3vw;opacity:0;" data-600="margin-top:8vw;opacity:1;" ><h1 style="font-size:1.5vw;letter-spacing:1.5vw;color:#494949;z-index:2;">Design By Han Wang</h1></div>
+    </div>
+    <div id="select" style="width:100vw;height:100vh;margin-top:47.091vw;background-color:#EFEFEF;z-index:10;position:fixed;overflow:hidden;">
+      <h1 id="cattitle" style="font-size:2vw;letter-spacing:1.8vw;color:#494949;margin-top:calc( 12vh - 47vw);margin-left:6vw;z-index:12;position:absolute;">Categories</h1>
+      <a href="design.html" target="_blank"><div id="cat_design" style="text-align:center;cursor:pointer;opacity:0.5;width:18vw;height:40vh;background-color:white;margin-top:calc( 30vh );margin-left:10vw;z-index:12;position:absolute;opacity:0;">
+           <img src="designicon.svg" style="width:9vw;margin-left:0.85vw;margin-top:60px;"></img>
+           <h1 style="font-size:1.3vw;margin-left:0vw;margin-top:40px;letter-spacing:0.5vw;">Design</h1>
+      </div></a>
+      <div id="cat_post" style="text-align:center;cursor:pointer;opacity:0.5;width:18vw;height:40vh;background-color:white;margin-top:calc( 30vh );margin-left:30.667vw;z-index:12;position:absolute;opacity:0;">
+        <img src="posticon.svg" style="width:9vw;margin-left:0.85vw;margin-top:60px;"></img>
+        <h1 style="font-size:1.3vw;margin-left:0vw;margin-top:40px;letter-spacing:0.5vw;">Post<br>Production</h1>
+      </div>
+      <div id="cat_practice" style="text-align:center;cursor:pointer;opacity:0.5;width:18vw;height:40vh;background-color:white;margin-top:calc( 30vh );margin-left:51.334vw;z-index:12;position:absolute;opacity:0;">
+        <img src="practiceicon.svg" style="width:9vw;margin-left:0.85vw;margin-top:60px;"></img>
+        <h1 style="font-size:1.3vw;margin-left:0vw;margin-top:40px;letter-spacing:0.5vw;">Practice</h1>
+      </div>
+      <div id="cat_article" style="text-align:center;cursor:pointer;opacity:0.5;width:18vw;height:40vh;background-color:white;margin-top:calc( 30vh );margin-left:72.001vw;z-index:12;position:absolute;opacity:0;">
+        <img src="articalicon.svg" style="width:9vw;margin-left:0.85vw;margin-top:60px;"></img>
+        <h1 style="font-size:1.3vw;margin-left:0vw;margin-top:40px;letter-spacing:0.5vw;">Article</h1>
+      </div>
+    </div>
+    <div id="footer" style="text-align:center;width:100vw;height:12vh;margin-top:calc( 47.091vw + 100vh );background-color:#585666;z-index:10;position:fixed;overflow:hidden;">
+        <div style="margin-top:4vh;">
+           <a href="https://www.facebook.com/whang.wang" target="_blank"><img style="height:4vh;" src="fbicon.svg"></img></a>
+           <a href="https://www.instagram.com/whangwang/" target="_blank"><img style="height:4vh;margin-left:2vw;" src="igicon.svg"></img></a>
+           <a href="http://line.me/ti/p/TWozWkPUEk" target="_blank"><img style="height:4vh;margin-left:2vw;" src="lineicon.svg"></img></a>
+           <a href="https://www.snupped.com/zh-TW/u/whangwang" target="_blank"><img style="height:4vh;margin-left:2vw;" src="snuppedicon.svg"></img></a>
+        </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var mouseX, mouseY;
+    $(document).mousemove(function(e) {
+      if($(window).scrollTop()==0){
+        mouseX = e.pageX/(document.documentElement.clientWidth)*100;
+        mouseY = e.pageY/(document.documentElement.clientWidth)*100;
+        var x=17.270;
+        var y=13.611;
+        var a = mouseX - x;
+        var b = mouseY - y;
+        var ba = 50 - x;
+        var bb = (50*0.47) - y;
+        var c = Math.sqrt( a*a + b*b );
+        var base = Math.sqrt( ba*ba + bb*bb );
+        var per = (base-c)/base*20;
+        h1w=0.11306*(document.documentElement.clientWidth);
+        $('#han1').css('width', (h1w+per)+'px');
+
+
+        var x1=6.805;
+        var y1=39.280;
+        var a1 = mouseX - x1;
+        var b1 = mouseY - y1;
+        var ba1 = 50 - x1;
+        var bb1 = (50*0.47) - y1;
+        var c1 = Math.sqrt( a1*a1 + b1*b1 );
+        var base1 = Math.sqrt( ba1*ba1 + bb1*bb1 );
+        var per1 = (base1-c1)/base1*20;
+        h2w=0.06637*(document.documentElement.clientWidth);
+        $('#han2').css('width', (h2w+per1)+'px');
+
+        var x2=43.388;
+        var y2=28.290;
+        var a2 = mouseX - x2;
+        var b2 = mouseY - y2;
+        var ba2 = 50 - x2;
+        var bb2 = (50*0.47) - y2;
+        var c2 = Math.sqrt( a2*a2 + b2*b2 );
+        var base2 = Math.sqrt( ba2*ba2 + bb2*bb2 );
+        var per2 = (base2-c2)/base2*4;
+        h3w=0.16733*(document.documentElement.clientWidth);
+        $('#han3').css('width', (h3w+per2)+'px');
+
+        var x3=76.043;
+        var y3=5.421;
+        var a3 = mouseX - x3;
+        var b3 = mouseY - y3;
+        var ba3 = 50 - x3;
+        var bb3 = (50*0.47) - y3;
+        var c3 = Math.sqrt( a3*a3 + b3*b3 );
+        var base3 = Math.sqrt( ba3*ba3 + bb3*bb3 );
+        var per3 = (base3-c3)/base3*20;
+        h4w=0.19437*(document.documentElement.clientWidth);
+        $('#han4').css('width', (h4w+per3)+'px');
+
+        var x4=85.185;
+        var y4=38.576;
+        var a4 = mouseX - x4;
+        var b4 = mouseY - y4;
+        var ba4 = 50 - x4;
+        var bb4 = (50*0.47) - y4;
+        var c4 = Math.sqrt( a4*a4 + b4*b4 );
+        var base4 = Math.sqrt( ba4*ba4 + bb4*bb4 );
+        var per4 = (base4-c4)/base4*30;
+        h5w=0.21567*(document.documentElement.clientWidth);
+        $('#han5').css('width', (h5w+per4)+'px');
+      }
+    }).mouseover(); // call the handler immediately
+    var skrollr_obj = skrollr.init();
+     $(window).scroll(function(){
+       $('#han1').css('top', '-'+$(this).scrollTop());
+       $('#han2').css('top', '-'+$(this).scrollTop());
+       $('#han3').css('top', '-'+$(this).scrollTop());
+       $('#han4').css('top', '-'+$(this).scrollTop());
+       $('#han5').css('top', '-'+$(this).scrollTop());
+       if($(window).scrollTop() >= (300+(document.documentElement.clientWidth*0.47)) )$('#designmask').hide();
+       else $('#designmask').show();
+        if($(window).scrollTop()>= 300){
+          if(parseInt($('#rbg').css('margin-top'),10)==0){
+            $('#rbg').css('margin-top','300px');
+            $('#rbge').css('margin-top','300px');
+            $('#bg').css('margin-top','300px');
+            $("#bg").css({position: 'absolute'});
+            $("#rbg").css({position: 'absolute'});
+            $("#rbge").css({position: 'absolute'});
+            $('#select').css('margin-top','calc( 47.019vw + 300px )');
+            $("#select").css({position: 'absolute'});
+            $('#footer').css('margin-top','calc( 47.019vw + 300px + 100vh )');
+            $("#footer").css({position: 'absolute'});
+          }
+          $('#cattitle').css('margin-top', 'calc( 12vh - 47vw + '+(parseInt($(window).scrollTop(),10)-300)+'px )');
+        }else{
+          if(parseInt($('#rbg').css('margin-top'),10)!=0){
+            $('#rbg').css('margin-top','0px');
+            $('#rbge').css('margin-top','0px');
+            $('#bg').css('margin-top','0px');
+            $("#bg").css({position: 'fixed'});
+            $("#rbg").css({position: 'fixed'});
+            $("#rbge").css({position: 'fixed'});
+            $('#select').css('margin-top','47.019vw');
+            $("#select").css({position: 'fixed'});
+            $('#footer').css('margin-top','calc( 47.019vw + 100vh )');
+            $("#footer").css({position: 'fixed'});
+          }
+        }
+  //    console.log(parseInt($(window).scrollTop(),10)-300-(document.documentElement.clientWidth*0.47));
+  var per = (parseInt($(window).scrollTop(),10)+(document.documentElement.clientHeight*0.12)-300-(document.documentElement.clientWidth*0.47)) / ((document.documentElement.clientWidth*0.12));
+    //  console.log(parseInt($(window).scrollTop(),10));
+    //    console.log(per);
+       if(per>1)per=1;
+       if(per==1){
+         $('#cat_design').addClass('cl');
+         $('#cat_post').addClass('cl');
+         $('#cat_practice').addClass('cl');
+         $('#cat_article').addClass('cl');
+       }else{
+         $('#cat_design').removeClass('cl');
+         $('#cat_post').removeClass('cl');
+         $('#cat_practice').removeClass('cl');
+         $('#cat_article').removeClass('cl');
+       }
+       $('#cat_design').css('opacity',per*0.5);
+       $('#cat_post').css('opacity',per*0.5);
+       $('#cat_practice').css('opacity',per*0.5);
+       $('#cat_article').css('opacity',per*0.5);
+      if(parseInt($(window).scrollTop(),10)-300-(document.documentElement.clientWidth*0.47)>=0){
+         $('#cat_design').css('margin-top', 'calc( 30vh + '+(parseInt($(window).scrollTop(),10)-300-(document.documentElement.clientWidth*0.47))+'px )');
+         $('#cat_post').css('margin-top', 'calc( 30vh + '+(parseInt($(window).scrollTop(),10)-300-(document.documentElement.clientWidth*0.47))+'px )');
+         $('#cat_practice').css('margin-top', 'calc( 30vh + '+(parseInt($(window).scrollTop(),10)-300-(document.documentElement.clientWidth*0.47))+'px )');
+         $('#cat_article').css('margin-top', 'calc( 30vh + '+(parseInt($(window).scrollTop(),10)-300-(document.documentElement.clientWidth*0.47))+'px )');
+
+       }
+     });
+  </script>
+</html>
