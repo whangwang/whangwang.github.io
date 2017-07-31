@@ -22,6 +22,9 @@
     </style>
   </head>
   <body>
+    <div id="loader" style="width:100vw;height:100vh;background-color:#F4F4F5;position:absolute;z-index:1000;">
+      <div id="loadbar" style="width:0;height:100vh;background-color:#E8E7EB;position:absolute;z-index:1001;"></div>
+    </div>
     <img id="rbge" src="mainanimate/rightbgextend.svg" style="margin-top:0;margin-left:53.457vw;width:76.692vw;position:fixed;" data-0="margin-left:53.457vw;" data-300="margin-left:-22.357vw;"></img>
     <img id="rbg" src="mainanimate/rightbg.svg" style="margin-top:0;margin-left:31.102vw;;width:68.898vw;position:fixed;" ></img>
     <img id="bg" src="mainanimate/main.svg" style="margin-top:0;margin-left:0vw;width:100vw;position:fixed;z-index:-1;" ></img>
@@ -133,6 +136,21 @@
       }
     }).mouseover(); // call the handler immediately
     var skrollr_obj = skrollr.init();
+    var width = 100,
+      perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
+      EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
+      time = parseInt((EstimatedTime/1000)%60)*100;
+    $("#loadbar").animate({
+      width: "100vw"
+    }, time);
+    $(document).ready(function(){
+      if(($('#loadbar').width())<document.documentElement.clientWidth){
+        $("#loadbar").animate({width: "100vw"},10,function(){
+        $('#loader').fadeOut(1000);  });
+      }else{
+        $('#loader').fadeOut(1000);
+      }
+    })
      $(window).scroll(function(){
        $('#han1').css('top', '-'+$(this).scrollTop());
        $('#han2').css('top', '-'+$(this).scrollTop());
