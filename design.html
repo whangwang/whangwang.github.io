@@ -23,6 +23,16 @@
        .arrow1:hover{
          opacity:1;
        }
+       #mobile-fullpage{
+         display:none;
+       }
+       #loadbar{
+         width:0;
+         height:100vh;
+         background-color:#E8E7EB;
+         position:fixed;
+         z-index:1001;
+       }
        .blur{
          -webkit-filter: blur(3vw);
          -moz-filter: blur(3vw);
@@ -49,13 +59,96 @@
          -ms-transition-property: margin-top;
 
        }
-
+       @media only screen and (max-width: 420px) , all and (orientation:portrait) {
+         #loadbar{
+           width:100vw;
+           height:0;
+         }
+         #fullpage{
+           display:none;
+         }
+         #mobile-fullpage{
+           position:absolute;
+           display:block;
+         }
+         .fp-controlArrow{
+           opacity:0.3;
+           top:42.5%;
+           margin-top:-30px;
+         }
+         .fp-controlArrow.fp-next{
+           border-width: 30px 0 30px 25px;
+         }
+         .fp-controlArrow.fp-prev{
+           border-width: 30px 25px 30px 0;
+         }
+         .fp-controlArrow:hover{
+           opacity:0.6;
+         }
+       }
 
     </style>
   </head>
   <body>
     <div id="loader" style="width:100vw;height:100vh;background-color:#F4F4F5;position:fixed;z-index:1000;">
-      <div id="loadbar" style="width:0;height:100vh;background-color:#E8E7EB;position:fixed;z-index:1001;"></div>
+      <div id="loadbar" ></div>
+    </div>
+    <div id="mobile-fullpage">
+        <div class="section" style="background-color:#E8E7EB;text-align:center;">
+          <font style="font-size:7vw;letter-spacing:3.5vw;">desig<font style="font-size:7vw;letter-spacing:0vw;">n</font></font>
+          <h1 style="font-size:2vw;letter-spacing:2vw;">9 item<font style="font-size:2vw;letter-spacing:0vw;">s</font></h1>
+        </div>
+        <div class="section nom" style="background-color:black;">
+            <div class="slide snom">
+              <div style="background-color:black;z-index:1;width:100vw;height:100vh;position:absolute;overflow:hidden;opacity:0.7;"><img src="contain/design/1/1.jpg" class="blur" style="z-index:-100;width:120vw;height:120vh;margin-top:-10vh;margin-left:-10vw;position:absolute;"/></div>
+              <div id="mobile-img" style="z-index:100;width:100vw;height:85vh;text-align:center;margin:0;display:table-cell;vertical-align:middle;position:relative">
+                  <img src="contain/design/1/1.jpg" style="max-width: 90vw;max-height: 75vh;z-index: 100;-webkit-box-shadow: 0 0 59vw gray;-moz-box-shadow: 0 0 59vw gray;box-shadow: 0 0 59vw gray;"></img>
+              </div>
+            <div class="blurctrl" style="width:100vw;height:15vh;position:absolute;margin-top:0vh;overflow:hidden;">
+              <div id="mobile-img-blur" class="blur" style="background-color:black;opacity:1;margin-top:-85vh;z-index:100;width:100vw;height:85vh;text-align:center;overflow:hidden;display:table-cell;vertical-align:middle;position:absolute">
+                  <img src="contain/design/1/1.jpg" style="left:0;right:0;bottom:0;top:0;margin:auto;position:absolute;opacity:0.7;max-width: 90vw;max-height: 75vh;z-index: 100;-webkit-box-shadow: 0 0 59vw gray;-moz-box-shadow: 0 0 59vw gray;box-shadow: 0 0 59vw gray;"></img>
+              </div>
+            </div>
+              <div id="mobile-detail" style="position:absolute;background-color:rgba(255,255,255,0.3);width:100vw;height:15vh;display:table;z-index:100;">
+                <div style="display:table;width:70vw;height:15vh;margin-top:0;">
+                 <div style="display: table-cell;vertical-align: middle;position: relative;color: white;z-index: 100;width: 70vw;padding-left: 5vw;padding-right: 5vw;">
+                  <h3 style="margin:0;font-size: 4vw;font-weight: bold;"></h3>
+                  <h1 style="margin: 0;font-size: 7vw;width: 70vw;margin-right: 0;position: static;font-weight: lighter;">海報</h1>
+                </div>
+              </div>
+              <div style="display:table-cell;width:10vw;height:15vh;margin-top:0;">
+                <div onclick="mtoggleshow(this,80);" style="cursor:pointer;display: table-cell;vertical-align: middle;position: relative;color: white;z-index: 100;width: 10vw;padding-left: 5vw;padding-right: 5vw;">
+                  <h3 style="margin:0;font-size: 10vw;font-weight: bold;text-align:center;">^</h3>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="slide snom">
+              <div style="background-color:black;z-index:1;width:100vw;height:100vh;position:absolute;overflow:hidden;opacity:0.7;"><img src="contain/design/1/2.jpg" class="blur" style="z-index:-100;width:120vw;height:120vh;margin-top:-10vh;margin-left:-10vw;position:absolute;"/></div>
+              <div id="mobile-img" style="z-index:100;width:100vw;height:85vh;text-align:center;margin:0;display:table-cell;vertical-align:middle;position:relative">
+                  <img src="contain/design/1/2.jpg" style="max-width: 90vw;max-height: 75vh;z-index: 100;-webkit-box-shadow: 0 0 59vw gray;-moz-box-shadow: 0 0 59vw gray;box-shadow: 0 0 59vw gray;"></img>
+              </div>
+            <div class="blurctrl" style="width:100vw;height:15vh;position:absolute;margin-top:0vh;overflow:hidden;">
+              <div id="mobile-img-blur" class="blur" style="background-color:black;opacity:1;margin-top:-85vh;z-index:100;width:100vw;height:85vh;text-align:center;overflow:hidden;display:table-cell;vertical-align:middle;position:absolute">
+                  <img src="contain/design/1/2.jpg" style="left:0;right:0;bottom:0;top:0;margin:auto;position:absolute;opacity:0.7;max-width: 90vw;max-height: 75vh;z-index: 100;-webkit-box-shadow: 0 0 59vw gray;-moz-box-shadow: 0 0 59vw gray;box-shadow: 0 0 59vw gray;"></img>
+              </div>
+            </div>
+              <div id="mobile-detail" style="position:absolute;background-color:rgba(255,255,255,0.3);width:100vw;height:15vh;display:table;z-index:100;">
+                <div style="display:table;width:70vw;height:15vh;margin-top:0;">
+                 <div style="display: table-cell;vertical-align: middle;position: relative;color: white;z-index: 100;width: 70vw;padding-left: 5vw;padding-right: 5vw;">
+                  <h3 style="margin:0;font-size: 4vw;font-weight: bold;"></h3>
+                  <h1 style="margin: 0;font-size: 7vw;width: 70vw;margin-right: 0;position: static;font-weight: lighter;">海報</h1>
+                </div>
+              </div>
+              <div style="display:table-cell;width:10vw;height:15vh;margin-top:0;">
+                <div onclick="mtoggleshow(this,80);" style="cursor:pointer;display: table-cell;vertical-align: middle;position: relative;color: white;z-index: 100;width: 10vw;padding-left: 5vw;padding-right: 5vw;">
+                  <h3 style="margin:0;font-size: 10vw;font-weight: bold;text-align:center;">^</h3>
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+
     </div>
     <div id="fullpage" style="position:fixed;">
 	     <div class="section" style="background-color:#E8E7EB;text-align:center;">
@@ -791,9 +884,18 @@
     ["99.31vh", "40vh",  "47vh", "2vh", "6vh", "4vh", "63.32vh", "6.6vh", "6vh"]
 
   ];
+  var minani=0;
   function hidedetails(target){
     if(infoanimate!=0){
       hidedetail($(target).parent().find('.infobox').find('.closebtn'));
+    }
+  }
+  function mtoggleshow(target,h){
+    if(minani==0){
+      mshowd(target,h);
+    }
+    else if(minani==2){
+      mhided(target);
     }
   }
   function seedetail(target){
@@ -829,6 +931,64 @@
        opacity: 0,
        marginLeft: detailpos[i][8]
      },1000);
+  }
+  function mhided(target){
+    console.log($(target));
+    minani=1;
+    $(target).parent().parent().animate({
+       marginTop: "0vh",
+       height: "15vh"
+    },1000,function(){
+        minani=0;
+    });
+    $(target).parent().parent().parent().find('.blurctrl').animate({
+       marginTop: "0vh",
+       height: "15vh"
+    },1000,function(){
+
+    });
+    $(target).parent().parent().parent().find('.blurctrl>div').animate({
+       marginTop: "-85vh"
+    },1000,function(){
+
+    });
+    $({deg: 180}).animate({deg: 0}, {
+        duration: 1000,
+        step: function(now){
+            $(target).find('h3').css({
+                 transform: "rotate(" + now + "deg)"
+            });
+        }
+    });
+  }
+  function mshowd(target,h){
+    console.log($(target));
+    minani=1;
+    $(target).parent().parent().animate({
+       marginTop: (15-h)+"vh",
+       height: h+"vh"
+    },1000,function(){
+        minani=2;
+    });
+    $(target).parent().parent().parent().find('.blurctrl').animate({
+       marginTop: (15-h)+"vh",
+       height: h+"vh"
+    },1000,function(){
+
+    });
+    $(target).parent().parent().parent().find('.blurctrl>div').animate({
+       marginTop: (h-100)+"vh"
+    },1000,function(){
+
+    });
+    $({deg: 0}).animate({deg: 180}, {
+        duration: 1000,
+        step: function(now){
+            $(target).find('h3').css({
+                 transform: "rotate(" + now + "deg)"
+            });
+        }
+    });
   }
   function hidedetail(target){
     infoanimate=target;
@@ -866,14 +1026,38 @@
     perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
     EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
     time = parseInt((EstimatedTime/1000)%60)*100;
-  $("#loadbar").animate({
-    width: "100vw"
-  }, time);
+    if(parseInt($('#loadbar').css('width'))==0){
+      $("#loadbar").animate({
+        width: "100vw"
+      }, time);
+    }else{
+      $("#loadbar").animate({
+        height: "100vh"
+      }, time);
+    }
   $(document).ready(function() {
+    if(420>=document.documentElement.clientWidth || window.innerHeight>document.documentElement.clientWidth){
+        $('#mobile-fullpage').fullpage({
+          anchors:['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+          slidesNavPosition: 'bottom',
+          loopBottom: false,
+          afterRender: function(){
+            $('.nom>.fp-tableCell').css('vertical-align','top');
+            $('.snom>.fp-tableCell').css('vertical-align','top');
+            if(($('#loadbar').height())<window.innerHeight){
+              $("#loadbar").animate({height: "100vh"},10,function(){
+              $('#loader').fadeOut(1000);  });
+            }else{
+              $('#loader').fadeOut(1000);
+            }
+            console.log('mobilefinish');
+          }
+        });
+    }else{
 	   $('#fullpage').fullpage({
 		     anchors:['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
          slidesNavPosition: 'bottom',
-         loopBottom: true,
+         loopBottom: false,
          onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
              var now=$('#s'+(index-1)+'-'+(nextSlideIndex+1));
              console.log(now);
@@ -911,6 +1095,7 @@
             });
 	       }
 	   });
+    }
   });
   $(window).resize(function() {
     $('#s1title').css('margin-top',((document.documentElement.clientHeight-$('#s1title').height())/2)+'px');

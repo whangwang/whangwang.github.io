@@ -342,7 +342,7 @@
       }
     }).mouseover(); // call the handler immediately
     var skrollr_obj;
-    if(420<document.documentElement.clientWidth  && document.documentElement.clientHeight<document.documentElement.clientWidth){
+    if(420<document.documentElement.clientWidth  && window.innerHeight<document.documentElement.clientWidth){
       skrollr_obj = skrollr.init();
     }
     var width = 100,
@@ -368,7 +368,7 @@
           $('#loader').fadeOut(1000);
         }
       }else{
-        if(($('#loadbar').height())<document.documentElement.clientWidth){
+        if(($('#loadbar').height())<window.innerHeight){
           $("#loadbar").animate({height: "100vh"},10,function(){
           $('#loader').fadeOut(1000);  });
         }else{
@@ -378,7 +378,7 @@
 
     })
      $(window).scroll(function(){
-       if(420>=document.documentElement.clientWidth || document.documentElement.clientHeight>document.documentElement.clientWidth){
+       if(420>=document.documentElement.clientWidth || window.innerHeight>document.documentElement.clientWidth){
          var vh=window.innerHeight;
             var n=$(window).scrollTop()*129.271/vh*-1*2;
             var no=$(window).scrollTop()*129.271/vh*-1*2;
