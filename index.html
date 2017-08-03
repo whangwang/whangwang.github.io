@@ -66,7 +66,8 @@
       #mobile-footer{
         display:none;
       }
-      @media only screen and (max-width: 420px) {
+
+      @media only screen and (max-width: 420px) , all and (orientation:portrait) {
         body{
           height:200vh;
         }
@@ -80,6 +81,7 @@
     z-index: 10;
     position: fixed;
     overflow: hidden;
+    opacity:0;
         }
         #footer{
           display:none;
@@ -93,6 +95,7 @@
           position: fixed;
           opacity: 0;
           margin-left: 50vw;
+          display:none;
         }
         #mobile-title{
           display:block;
@@ -339,7 +342,7 @@
       }
     }).mouseover(); // call the handler immediately
     var skrollr_obj;
-    if(420<document.documentElement.clientWidth){
+    if(420<document.documentElement.clientWidth  && document.documentElement.clientHeight<document.documentElement.clientWidth){
       skrollr_obj = skrollr.init();
     }
     var width = 100,
@@ -375,7 +378,7 @@
 
     })
      $(window).scroll(function(){
-       if(420>=document.documentElement.clientWidth){
+       if(420>=document.documentElement.clientWidth || document.documentElement.clientHeight>document.documentElement.clientWidth){
          var vh=window.innerHeight;
             var n=$(window).scrollTop()*129.271/vh*-1*2;
             var no=$(window).scrollTop()*129.271/vh*-1*2;
@@ -394,9 +397,12 @@
             $('#mobile-title').css('margin-top',(no*-40+50)+'vw');
             $('#mobile-cat').css('opacity',(no-1.4));
             $('#mobile-cat').css('margin-left',(Math.min(((no-1.4)*50+50),100)-100)+'vw');
+            if((no-1.4)>0)$('#mobile-select').css('display','block');
+            else  $('#mobile-select').css('display','none');
             $('#mobile-select').css('opacity',Math.min((no-1.4),1)*0.8);
             $('#mobile-select').css('margin-left',(100-Math.min(((no-1.4)*50+50),100))+'vw');
             $('#mobile-footer').css('margin-top',(100-Math.min(Math.max(no-2.4,0),1)*10)+'vh');
+            $('#mobile-footer').css('opacity',Math.min((no-1.4),1)*0.8);
             console.log(vh);
        }else{
        $('#han1').css('top', '-'+$(this).scrollTop());
