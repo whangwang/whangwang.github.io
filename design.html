@@ -934,61 +934,54 @@
   }
   function mhided(target){
     console.log($(target));
-    minani=1;
-    $(target).parent().parent().animate({
+    minani=0;
+    $(target).parent().parent().css({
        marginTop: "0vh",
        height: "15vh"
     },1000,function(){
         minani=0;
     });
-    $(target).parent().parent().parent().find('.blurctrl').animate({
+    $(target).parent().parent().parent().find('.blurctrl').css({
        marginTop: "0vh",
        height: "15vh"
     },1000,function(){
 
     });
-    $(target).parent().parent().parent().find('.blurctrl>div').animate({
+    $(target).parent().parent().parent().find('.blurctrl>div').css({
        marginTop: "-85vh"
     },1000,function(){
 
     });
-    $({deg: 180}).animate({deg: 0}, {
-        duration: 1000,
-        step: function(now){
+
             $(target).find('h3').css({
-                 transform: "rotate(" + now + "deg)"
+                 transform: "rotate(0deg)"
             });
-        }
-    });
+
+
   }
   function mshowd(target,h){
     console.log($(target));
-    minani=1;
-    $(target).parent().parent().animate({
+    minani=2;
+    $(target).parent().parent().css({
        marginTop: (15-h)+"vh",
        height: h+"vh"
     },1000,function(){
-        minani=2;
     });
-    $(target).parent().parent().parent().find('.blurctrl').animate({
+    $(target).parent().parent().parent().find('.blurctrl').css({
        marginTop: (15-h)+"vh",
        height: h+"vh"
     },1000,function(){
 
     });
-    $(target).parent().parent().parent().find('.blurctrl>div').animate({
+    $(target).parent().parent().parent().find('.blurctrl>div').css({
        marginTop: (h-100)+"vh"
     },1000,function(){
 
     });
-    $({deg: 0}).animate({deg: 180}, {
-        duration: 1000,
-        step: function(now){
+
             $(target).find('h3').css({
-                 transform: "rotate(" + now + "deg)"
+                 transform: "rotate(180deg)"
             });
-        }
-    });
   }
   function hidedetail(target){
     infoanimate=target;
