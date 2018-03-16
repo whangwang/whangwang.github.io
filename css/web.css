@@ -138,14 +138,14 @@ body { font-family: sans-serif; }
   background-color: transparent;
 }
 
-@media (max-width: 1200px){
+@media only screen and (max-width: 1200px){
   .grid-container{
     width: 970px;
     margin-left: calc( 50vw - 485px );
   }
 }
 
-@media (max-width: 992px){
+@media only screen and (max-width: 992px){
   .grid-container{
     width: 750px;
     margin-left: calc( 50vw - 375px );
@@ -163,7 +163,7 @@ body { font-family: sans-serif; }
   }
 }
 
-@media (max-width: 768px){
+@media only screen and (max-width: 768px){
   .grid-container{
     width: 100%;
     padding-left: 15px;

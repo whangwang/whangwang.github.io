@@ -107,7 +107,7 @@ body{
   position: absolute;
   margin-left: calc( 62.5vw - 60px );
 }
-@media (max-width: 991px){
+@media only screen and (max-width: 991px){
   .background-component{
     display: none;
   }
@@ -147,7 +147,7 @@ body{
     margin-top: calc( 50vh - 20vw - 100px );
   }
 }
-@media (max-width: 500px){
+@media only screen and (max-width: 500px){
   .hanpaint{
     width: 200px;
     margin-left: calc( 50vw - 100px );
