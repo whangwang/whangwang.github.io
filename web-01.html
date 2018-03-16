@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Perspective Page View Navigation</title>
+		<meta name="description" content="Design + Coding + HanWang" />
+		<meta name="keywords" content="ui, ux, design, web, css, code, html" />
+		<meta name="author" content="HanWang" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/ham.css" rel="stylesheet">
+		<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/modernizr.custom.25376.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+		<link rel="stylesheet" type"text/css" href="css/detail.css" />
+	</head>
+	<body>
+    <div class="web-loader">
+      <img src="img/loading.svg" />
+    </div>
+		<div id="perspective" class="perspective effect-moveleft">
+			<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+          <div class="detail-header grid-container">
+            <button id="showMenu" class="hamburger hamburger--arrow-r" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <h4>Staytuned Design</h4>
+            <p>提供 Windows 10 的使用者能夠便利的瀏覽、編輯、管理儲存在 NAS 中的圖片、同時也可以備份與上傳圖片到 NAS 中。操作和使用上同時支援 Windows phone，同時也符合Windows 10 上的 Guideline。</p>
+            <div class="short-info">
+              <table>
+                <tr>
+                  <th>Platform</th>
+                  <td>WebSite</td>
+                </tr>
+                <tr>
+                  <th>Work</th>
+                  <td>UI Design<br>Web Developing</td>
+                </tr>
+                <tr>
+                  <th>Skill</th>
+                  <td>Adobe Illustrator<br>Html,CSS,JS<br>NodeJS</td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td>Processing</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="grid-container detail-view">
+            <div class="detail-view-content">
+              <!-- intro
+                h5: img-description
+              -->
+              <img src="https://cdn-images-1.medium.com/max/800/1*5XO0vb0mmbRoCLvB1Laxww.png" />
+              <h5>Front End Framework</h5>
+              <h4>Some aspects to consider:</h4>
+              <p>
+                When we work with a big team of designers at the same time in the same project it is difficult to be aligned, and even more so when the project is an ecosystem of applications that must follow an aesthetic line and comply with certain guidelines that specify behaviors and interactions.
+              </p>
+              <p>
+                Feel free to download the sketch file
+                <a href="https://dribbble.com/shots/2882661-Styleguide">https://dribbble.com/shots/2882661-Styleguide</a>
+              </p>
+              <p>
+                One of the ways that we can take to generate a “normalization” in the interface is to define a styleguide (thought from a 100% visual perspective) that helps the whole design team to avoid future changes, unnecessary work hours and increase productivity, allowing us to have a better focus on the behavior of components and interactions within the application.
+              </p>
+              <p>
+                One of the ways that we can take to generate a “normalization” in the interface is to define a styleguide (thought from a 100% visual perspective) that helps the whole design team to avoid future changes, unnecessary work hours and increase productivity, allowing us to have a better focus on the behavior of components and interactions within the application.
+              </p>
+              <h2>Let’s start implementing FEF</h2>
+              <h3>Step 1, Defining the IA:</h3>
+              <p>
+                One of the ways that we can take to generate a “normalization” in the interface is to define a styleguide (thought from a 100% visual perspective) that helps the whole design team to avoid future changes, unnecessary work hours and increase productivity, allowing us to have a better focus on the behavior of components and interactions within the application.
+              </p>
+              <img src="https://cdn-images-1.medium.com/max/800/1*HF9eeJVg8B9SPtTZaILG8g.png" />
+              <h5>Front End Framework</h5>
+            </div>
+          </div>
+
+
+				</div><!-- wrapper -->
+			</div><!-- /container -->
+			<nav class="outer-nav right vertical">
+				<a href="#">Home</a>
+				<a href="#">Resume</a>
+				<a href="web.html">Web Development</a>
+				<a href="#">UI Design</a>
+				<a href="#">Graphic Design</a>
+				<a href="#">Typography</a>
+			</nav>
+		</div><!-- /perspective -->
+		<script src="js/classie.js"></script>
+		<script src="js/menu.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('body').imagesLoaded().progress( function() {
+            console.log('test');
+            $('.web-loader').fadeOut(500);
+          });
+          $('.hamburger').hover(function(){
+            $(this).addClass('is-active');
+          },function(){
+            $(this).removeClass('is-active');
+          });
+          $('.wrapper').scroll(function(){
+            console.log('test_scroll');
+            console.log($('.wrapper').scrollTop());
+          });
+        });
+        $('body').scroll(function(){
+          $('.detail-header').css('opacity',(400 - Math.min(400,$('body').scrollTop()))/400);
+          $('.detail-header').css('transform','translate(0px,'+String(Math.min($('body').scrollTop()/2,200))+'px)');
+
+        });
+    </script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Perspective Page View Navigation</title>
+		<meta name="description" content="Design + Coding + HanWang" />
+		<meta name="keywords" content="ui, ux, design, web, css, code, html" />
+		<meta name="author" content="HanWang" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/ham.css" rel="stylesheet">
+		<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/modernizr.custom.25376.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+		<link rel="stylesheet" type"text/css" href="css/web.css" />
+	</head>
+	<body>
+    <div class="web-loader">
+      <img src="img/loading.svg" />
+    </div>
+		<div id="perspective" class="perspective effect-moveleft">
+			<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+          <div class="detail-header grid-container">
+            <button id="showMenu" class="hamburger hamburger--arrow-r" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <h4>Web Development</h4>
+            <label>16 Item.</label><br>
+          </div>
+          <div class="grid-container">
+            <div class="grid">
+              <div class="grid-sizer"></div>
+              <div class="grid-item">
+                <div class="hover-show">
+                  <div class="hover-show-content">
+                    <h5 class="hover-title">Hover Title</h5>
+                    <p class="hover-description">The text-overflow CSS property determines how overflowed content.</p>
+                  </div>
+                </div>
+                <img src="img/web/1.png" />
+              </div>
+              <div class="grid-item">
+                <img src="img/web/2.png" />
+              </div>
+
+              <div class="grid-item">
+                <img src="img/web/4.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="img/web/5.jpg" />
+              </div>
+
+              <div class="grid-item">
+                <img src="img/web/7.jpg" />
+              </div>
+
+            </div>
+          </div>
+
+
+				</div><!-- wrapper -->
+			</div><!-- /container -->
+			<nav class="outer-nav right vertical">
+				<a href="#">Home</a>
+				<a href="#">Resume</a>
+				<a class="samepage" href="#">Web Development</a>
+				<a href="#">UI Design</a>
+				<a href="#">Graphic Design</a>
+				<a href="#">Typography</a>
+			</nav>
+		</div><!-- /perspective -->
+		<script src="js/classie.js"></script>
+		<script src="js/menu.js"></script>
+    <script>
+        $(document).ready(function(){
+          var $grid = $('.grid').masonry({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            gutter: 10
+          });
+          // layout Masonry after each image loads
+          $grid.imagesLoaded().progress( function() {
+            console.log('test');
+            $('.web-loader').fadeOut(500);
+            $grid.masonry('layout');
+          });
+          $('.hamburger').hover(function(){
+            $(this).addClass('is-active');
+          },function(){
+            $(this).removeClass('is-active');
+          });
+        });
+    </script>
+	</body>
+</html>
