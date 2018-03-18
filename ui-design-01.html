@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" />
+		<title>Dcard 抽卡 reDesign - HanWang</title>
+		<meta name="description" content="Design + Coding + HanWang" />
+		<meta name="keywords" content="ui, ux, design, web, css, code, html" />
+		<meta name="author" content="HanWang" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/ham.css" rel="stylesheet">
+		<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/modernizr.custom.25376.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+		<link rel="stylesheet" type"text/css" href="css/detail.css" />
+	</head>
+	<body>
+    <div class="web-loader">
+      <img src="img/loading.svg" />
+    </div>
+		<div id="perspective" class="perspective effect-moveleft">
+			<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+          <div class="detail-header grid-container">
+            <button id="showMenu" class="hamburger hamburger--arrow-r" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <h4>Dcard 抽卡 reDesign</h4>
+            <p>這個專案是這次應徵Dcard暑期UI/UX實習設計的作業，挑一個Dcard APP的功能從設計角度上來改善。我選擇的是抽卡，目標是能提升使用者抽卡的誘因，並美化抽卡的UI介面。</p>
+            <div class="short-info">
+              <table>
+                <tr>
+                  <th>Platform</th>
+                  <td>Android</td>
+                </tr>
+                <tr>
+                  <th>Work</th>
+                  <td>UI Design</td>
+                </tr>
+                <tr>
+                  <th>Skill</th>
+                  <td>Adobe Illustrator<br>Adobe After Effects</td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td>Done</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="grid-container detail-view">
+            <div class="detail-view-content">
+              <!-- intro
+                h5: img-description
+              -->
+							<img src="img/ui-design/1/1.png" />
+              <h5>Dcard 抽卡流程/介面 reDesign</h5>
+              <h4>目標</h4>
+              <p>
+                優化抽卡流程
+              </p>
+              <h4>問題分析</h4>
+              <p>
+								在設計前詢問過大部分身邊的朋友，發現Dcard在大學生手機已經是和facebook跟instagram一樣的必備品了，但是有一大部分的朋友大多僅使用“討論區”的功能，Dcard最有特色的抽卡交友反而比較少使用。經過一些討論後，我猜想可能問題是出在Dcard的介面設計上，抽卡的流程比較沒有瀏覽討論區這麼明顯，可能容易讓使用者遺忘，因此嘗試解決這個問題。
+              </p>
+							<h4>解決概念</h4>
+              <p>
+								將想要強調的東西放在明顯的地方，並提供一定程度的資訊誘使使用者嘗試這個功能。
+              </p>
+							<h4>解決步驟</h4>
+							<h3>首先以抽卡的流程來做分析</h3>
+              <p>
+目前的流程為進入首頁->進入側邊欄->抽卡->檢視今日對象。我認為第一個可以改善的部分是側邊欄。由於dcard在文章分類(例如：最新文章，熱門文章，收藏文章等)使用的架構是tabs，因此畫面上左右滑動會觸發切換tab，只有從最側邊滑入才會開啟側邊欄。這是一個合理的情境，但可能不是最好的情境。從去年開始，智慧型手機吹起了一股全面屏風潮，意即為18:9的螢幕，而這也意味著手機的header離使用者的距離越來越遠，尤其在單手操作的狀況下特別明顯，不論是從左側滑出或是點擊左上方都不甚理想。              </p>
+							<p>
+而再打開Dcard的側邊欄檢視，側邊欄的有七個連結，包括最上面的<b>使用者資料</b>、<b>論壇</b>、<b>抽卡</b>、<b>朋友</b>、<b>信箱</b>、<b>說明</b>、<b>設定</b>。而這其中我按照使用者使用頻率的方式來合併，認為可以合併成五個連結:
+							</p>
+							<ul style="padding-left: 20px;font-weight: 400;">
+								<li>論壇</li>
+								<li>信箱/朋友</li>
+								<li>抽卡</li>
+								<li>說明</li>
+								<li>使用者資料/設定</li>
+							</ul>
+              <p>
+信箱/朋友的部分，我認為使用者“純粹檢視朋友列表”的需求比較低，因為Dcard交友建立在信件往來，因此朋友列表在信箱列表上也可以得到相同的資訊，甚至信箱還會按照信件往來程度和日期做排序，對使用者的幫助更大，因此將這兩個連結合併，並把原本檢視朋友資料的功能併入信箱的個別信件頁面裡。              </p>
+							<p>
+而使用者資料/設定就是單純的把設定的層級往下一層，因為我認為設定中的功能不但不會常被使用，而且在使用者資料下找設定應該符合大多數的操作習慣。
+							</p>
+							<p>
+								所以我們將七欄改為五欄後，選擇使用footer tabs當作新的navigator。而這個時候主角就回到抽卡上。經過這個改變後，抽卡的按鈕已經直接顯示在App螢幕上了，而不是待在側邊欄裡，成功達成第一個步驟。
+							</p>
+							<h3>吸引使用者注意</h3>
+							<p>在解決概念中我們提到，提供一定程度的資訊誘使使用者，但我們怎麼在在一個小小的footer tabs上達成這件事呢?最簡單，也可能是成效最好的做法，就是利用圖片。</p>
+							<p>儘管Dcard的交友模式不僅靠照片，也靠大量的自我介紹來配對，但是不能否認的是的多數的人第一印象通常來自照片，因此我認為最容易想要讓使用者一探究竟的方式就是提供一個縮圖讓他預覽。當你進入app之後，不論瀏覽任何頁面都可以看到你未來的卡友在footer tabs上等著你，我認為這個互動比原先的漢堡式選單要來得親切的多，也更加的具裝飾性。</p>
+							<p>因此整合上述的步驟，我們得到了下面這個原型：</p>
+							<br>
+							<img src="img/ui-design/1/2.png" />
+							<h5>Footer Tabs Prototype</h5>
+							<div class="half-img">
+								<img src="img/ui-design/1/3.png" />
+								<img src="img/ui-design/1/4.gif" />
+								<h5>抽卡介面/流程 Prototype</h5>
+							</div>
+							<h4>結語</h4>
+							<p>
+								使用者能夠在進入App後立即得到“抽卡”的這個提醒，這就是這次ReDesign的目的，畢竟Dcard抽卡是國內少見性質單純且概念有趣的交友模式，這點是任何一個線上論壇都比不過的，因此我覺得透過這個redesign將抽卡功能強化對Dcard這個App是正向的發展。
+							</p>
+            </div>
+          </div>
+
+
+				</div><!-- wrapper -->
+			</div><!-- /container -->
+			<nav class="outer-nav right vertical">
+				<a href="index.html">Home</a>
+				<a href="#">Resume</a>
+				<a href="web.html">Web Development</a>
+				<a href="ui-design.html">UI Design</a>
+			</nav>
+		</div><!-- /perspective -->
+		<script src="js/classie.js"></script>
+		<script src="js/menu.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('body').imagesLoaded().progress( function() {
+            console.log('test');
+            $('.web-loader').fadeOut(500);
+          });
+          $('.hamburger').hover(function(){
+            $(this).addClass('is-active');
+          },function(){
+            $(this).removeClass('is-active');
+          });
+          $('.wrapper').scroll(function(){
+            console.log('test_scroll');
+            console.log($('.wrapper').scrollTop());
+          });
+        });
+        $('body').scroll(function(){
+          $('.detail-header').css('opacity',(400 - Math.min(400,$('body').scrollTop()))/400);
+          $('.detail-header').css('transform','translate(0px,'+String(Math.min($('body').scrollTop()/2,200))+'px)');
+
+        });
+    </script>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" />
+		<title>UI Design - HanWang</title>
+		<meta name="description" content="Design + Coding + HanWang" />
+		<meta name="keywords" content="ui, ux, design, web, css, code, html" />
+		<meta name="author" content="HanWang" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/ham.css" rel="stylesheet">
+		<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/modernizr.custom.25376.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+		<link rel="stylesheet" type"text/css" href="css/web.css" />
+	</head>
+	<body>
+    <div class="web-loader">
+      <img src="img/loading.svg" />
+    </div>
+		<div id="perspective" class="perspective effect-moveleft">
+			<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+          <div class="detail-header grid-container">
+            <button id="showMenu" class="hamburger hamburger--arrow-r" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <h4>UI Design</h4>
+            <label>1 Item.</label><br>
+          </div>
+          <div class="grid-container">
+            <div class="grid">
+              <div class="grid-sizer"></div>
+              <div class="grid-item">
+								<a href="ui-design-01.html">
+									<div class="hover-show">
+										<div class="hover-show-content">
+											<h5 class="hover-title">Dcard 抽卡 reDesign</h5>
+											<p class="hover-description">強化Dcard抽卡功能的存在感，提升使用者的使用率。</p>
+										</div>
+									</div>
+									<img src="img/ui-design/1.png" />
+								</a>
+              </div>
+							<div class="grid-item">
+								<a href="ui-design-02.html">
+									<div class="hover-show">
+										<div class="hover-show-content">
+											<h5 class="hover-title">KKBOX Login reDesign</h5>
+											<p class="hover-description">藉由優化登入畫面強化KKBOX企業形象。</p>
+										</div>
+									</div>
+									<img src="img/ui-design/2.png" />
+								</a>
+              </div>
+
+
+            </div>
+          </div>
+
+
+				</div><!-- wrapper -->
+			</div><!-- /container -->
+			<nav class="outer-nav right vertical">
+				<a href="index.html">Home</a>
+				<a href="#">Resume</a>
+				<a href="web.html">Web Development</a>
+				<a class="samepage" href="#">UI Design</a>
+			</nav>
+		</div><!-- /perspective -->
+		<script src="js/classie.js"></script>
+		<script src="js/menu.js"></script>
+    <script>
+        $(document).ready(function(){
+          var $grid = $('.grid').masonry({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            gutter: 10
+          });
+          // layout Masonry after each image loads
+          $grid.imagesLoaded().progress( function() {
+            console.log('test');
+            $('.web-loader').fadeOut(500);
+            $grid.masonry('layout');
+          });
+          $('.hamburger').hover(function(){
+            $(this).addClass('is-active');
+          },function(){
+            $(this).removeClass('is-active');
+          });
+        });
+    </script>
+	</body>
+</html>
